@@ -43,8 +43,4 @@ for (let i=1;i<=31;i++){
     option.textContent=i;
     days.appendChild(option);
 }
-const ampms = document.getElementById("ampm");
-    const option = document.createElement("option");
-    option.textContent=am;
-    option.textContent=pm;
-    ampms.appendChild(option);
+
