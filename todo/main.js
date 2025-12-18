@@ -1,11 +1,25 @@
 const input = document.querySelector(".task");
+// localStorage.setItem("Tasks",input.value)
 const add = document.querySelector(".add");
+const show=document.querySelector(".showTask");
 add.addEventListener("click", () => {
     const show = document.querySelector(".showTask")
-    show.innerHTML = input.value;
+    // show.innerHTML=localStorage.getItem("value");
+    localStorage.setItem("Tasks",input.value)
+    show.innerHTML=input.value;
+    console.log(input.value)
     show.style.fontSize = "60px"
     show.style.textAlign = "center"
 })
+
+window.addEventListener("load",()=>{
+    const value= localStorage.getItem("Tasks");
+    show.innerHTML=value;
+    show.style.fontSize = "60px"
+    show.style.textAlign = "center"
+})
+
+
 const remove = document.querySelector(".delete");
 remove.addEventListener("click", () => {
     const show = document.querySelector(".showTask")
@@ -43,4 +57,5 @@ for (let i=1;i<=31;i++){
     option.textContent=i;
     days.appendChild(option);
 }
+
 
