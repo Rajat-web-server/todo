@@ -5,33 +5,44 @@ const Delete = document.querySelector(".delete");
 const Update = document.querySelector(".update")
 
 //Here the thing I have created is creating and deleting functions
-
+let taskList =[]
 add.addEventListener("click", () => {
+
+    
+
     const show = document.querySelector(".showTask")
     // show.innerHTML=localStorage.getItem("value");
-    localStorage.setItem("Tasks",input.value)
-    show.innerHTML=input.value;
-    console.log(input.value)
+    // localStorage.setItem("Tasks",input.value)
+    console.log("Before push:", taskList)
+    taskList.push(input.value)
+    console.log("After push:", taskList)
+    show.innerHTML=taskList;
+    console.log(taskList)
+    console.log("UI",input.value)
     show.style.fontSize = "60px"
     show.style.textAlign = "center"
 })
-
-window.addEventListener("load",()=>{
-    const value= localStorage.getItem("Tasks");
-    show.innerHTML=value;
-    show.style.fontSize = "60px"
-    show.style.textAlign = "center"
-})
-
 
 
 Delete.addEventListener("click", () => {
     const show = document.querySelector(".showTask")
+    taskList =[]
     show.innerHTML = "";
 })
 
+
 //How can I add the updating function :
 
+
+
+
+
+// window.addEventListener("load",()=>{
+//     const value= localStorage.getItem("Tasks");
+//     show.innerHTML=value;
+//     show.style.fontSize = "60px"
+//     show.style.textAlign = "center"
+// })
 
 
 // const hours = document.getElementById("hour");
