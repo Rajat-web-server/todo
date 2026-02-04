@@ -1,34 +1,46 @@
 const input = document.querySelector(".task");
 const add = document.querySelector(".add");
-const show=document.querySelector(".showTask");
+const show = document.querySelector(".showTask");
 const Delete = document.querySelector(".delete");
 const Update = document.querySelector(".update")
 
 //Here the thing I have created is creating and deleting functions
-let taskList =[]
+let taskList = []
 add.addEventListener("click", () => {
 
-    
 
-    const show = document.querySelector(".showTask")
-    // show.innerHTML=localStorage.getItem("value");
-    // localStorage.setItem("Tasks",input.value)
-    console.log("Before push:", taskList)
+    show.innerHTML = ''
     taskList.push(input.value)
-    console.log("After push:", taskList)
-    show.innerHTML=taskList;
+    input.value = '';
     console.log(taskList)
-    console.log("UI",input.value)
-    show.style.fontSize = "60px"
-    show.style.textAlign = "center"
+    taskList.forEach((task, index) => {
+
+        console.log("Task under the foreach : ", task, index)
+
+        const taskEl = document.createElement("p");
+        taskEl.textContent = task;
+
+        show.appendChild(taskEl);
+        show.style.fontSize = "30px"
+        show.style.textAlign = "center"
+
+
+    }
+    )
+
 })
 
 
 Delete.addEventListener("click", () => {
     const show = document.querySelector(".showTask")
-    taskList =[]
+    taskList = []
     show.innerHTML = "";
+    console.log(taskList)
+    console.log("UI : ", input.value)
 })
+
+
+
 
 
 //How can I add the updating function :
