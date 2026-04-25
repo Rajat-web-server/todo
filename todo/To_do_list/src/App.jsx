@@ -19,10 +19,17 @@ useEffect(() => {
   console.log("Updated TaskList:", TaskList);
 }, [TaskList]);
 
+  const updateTaskList=(index,newTask)=>{
+    const updatedTask = [...TaskList];
+    updatedTask[index]=newTask;
+    setTaskList(updatedTask);
+  }
+
   const submit =()=>{
     
     setSubmit_Task(Task);
     setTaskList([...TaskList,Task]);
+    setTask("")
   }
  
 
@@ -31,8 +38,8 @@ useEffect(() => {
       <Input  setTask={setTask} Task={Task}/>
       <button onClick={submit}>Submit</button>
       {TaskList.map((T,index)=>{
-        console.log("bug");
-       return <Display key={index} Task={T}  />
+        // console.log("bug");
+       return <Display key={index} Task={T} setTask={setTask} updateTaskList={updateTaskList}  />
       })}
      
     </div>
