@@ -32,6 +32,11 @@ useEffect(() => {
     setTaskList([...TaskList,Task]);
     setTask("")
   }
+
+    const deleteTask = (index)=>{
+      const filter_task = TaskList.filter((_,i)=>i!=index);
+      setTaskList(filter_task)
+    }
  
 
   return (
@@ -40,7 +45,7 @@ useEffect(() => {
       <button onClick={submit}>Submit</button>
       {TaskList.map((T,index)=>{
         // console.log("bug");
-       return <Display index={index} Task={T} setTask={setTask} updateTaskList={updateTaskList}  />
+       return <Display index={index} Task={T} setTask={setTask} updateTaskList={updateTaskList} deleteTask={deleteTask}  />
       })}
      
     </div>
