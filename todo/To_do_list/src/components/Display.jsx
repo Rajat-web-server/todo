@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Input } from "./input"
-export const Display =({Task, setTask, index, updateTaskList})=>{
+export const Display =({Task, index, updateTaskList})=>{
 
     const [isUpdate, setisUpdate]=useState(false)
     const [UpdatedTask,setisUpdatedTask]=useState(Task)
@@ -11,10 +11,11 @@ export const Display =({Task, setTask, index, updateTaskList})=>{
 
     const Submit =()=>{
         updateTaskList(index,UpdatedTask)
+        console.log("display task :",UpdatedTask)
         setisUpdate(false)
     }
     const Delete =()=>{
-        setTask("")
+        // setTask("")
     }
     return(
         <div>
