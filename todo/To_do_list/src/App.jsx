@@ -32,7 +32,7 @@ useEffect(() => {
       <button onClick={submit}>Submit</button>
       {TaskList.map((T,index)=>{
         console.log("bug");
-        <Display key={index} Task={T}  />
+       return <Display key={index} Task={T}  />
       })}
      
     </div>
