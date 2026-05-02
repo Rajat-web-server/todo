@@ -10,6 +10,7 @@ function App() {
   const[Task,setTask]=useState("")
   const [TaskList, setTaskList]=useState([])
   const[Submit_Task,setSubmit_Task]=useState("")
+  const[Checkbox, setCheckbox] =useState(false)
 
   useEffect(() => {
   console.log("Updated Submit Task:", Submit_Task);
@@ -45,7 +46,7 @@ useEffect(() => {
       <button onClick={submit}>Submit</button>
       {TaskList.map((T,index)=>{
         // console.log("bug");
-       return <Display index={index} Task={T} setTask={setTask} updateTaskList={updateTaskList} deleteTask={deleteTask}  />
+       return <Display index={index} Task={T} setTask={setTask} updateTaskList={updateTaskList} deleteTask={deleteTask} Checkbox ={Checkbox} setCheckbox ={setCheckbox}  />
       })}
      
     </div>

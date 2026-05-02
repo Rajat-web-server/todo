@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { Input } from "./input"
-export const Display =({Task, index, updateTaskList, deleteTask})=>{
+export const Display =({Task, index, updateTaskList, deleteTask, Checkbox, setCheckbox})=>{
 
     const [isUpdate, setisUpdate]=useState(false)
     const [UpdatedTask,setisUpdatedTask]=useState(Task)
+
 
     const Update =()=>{
         setisUpdate(!isUpdate)
@@ -16,6 +17,9 @@ export const Display =({Task, index, updateTaskList, deleteTask})=>{
     }
     const Delete =()=>{
         deleteTask(index);
+    }
+    const checked =()=>{
+        setCheckbox(!Checkbox)
     }
     return(
         <div>
@@ -36,6 +40,7 @@ export const Display =({Task, index, updateTaskList, deleteTask})=>{
             
             <button onClick={Update}>Edit</button>
             <button onClick={Delete}>Delete</button>
+            <input type="checkbox" onChange={checked} />
         </div>
     )
 }
