@@ -1,12 +1,10 @@
 function Footer() {
   return (
     <footer style={{
-        position: "fixed",
-        bottom: 0,
         width: "100%",
         fontSize: "15px",
         padding: "5px",
-        backgroundColor: "grey",
+        backgroundColor: "rgb(250, 225, 123)",
         fontWeight:"bold",
         color:"white",
         WebkitTextStroke:"1px black"
