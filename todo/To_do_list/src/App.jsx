@@ -3,6 +3,8 @@ import { useEffect } from "react";
 
 import { Input } from "./components/input";
 import { Display } from "./components/Display";
+import Footer from "./components/footer";
+import Header from "./components/Header";
 import "./App.css";
 
 function App() {
@@ -48,6 +50,7 @@ function App() {
 
   return (
     <div className="container">
+      <Header />
       <Input setTask={setTask} Task={Task} />
       <div className="submit_button">
         <button onClick={submit}>Submit</button>
@@ -68,6 +71,7 @@ function App() {
           />
         );
       })}
+      <Footer />
     </div>
   );
 }
