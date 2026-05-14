@@ -2,7 +2,6 @@ function Header() {
   return (
     <header
       style={{
-        position: "fixed",
         top: 0,
         width: "100%",
         fontSize: "30px",

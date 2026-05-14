@@ -51,26 +51,31 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <Input setTask={setTask} Task={Task} />
-      <div className="submit_button">
-        <button onClick={submit}>Submit</button>
+      <div className="main">
+        <Input setTask={setTask} Task={Task} />
+        <div className="submit_button">
+          <button onClick={submit}>Submit</button>
+        </div>
+        <div className="task">
+          {TaskList.map((T, index) => {
+          // console.log("bug");
+          return (
+            <Display
+              key={index}
+              index={index}
+              Task={T}
+              setTask={setTask}
+              updateTaskList={updateTaskList}
+              deleteTask={deleteTask}
+              Checkbox={Checkbox}
+              setCheckbox={setCheckbox}
+            />
+          );
+        })}
+        </div>
+        
       </div>
 
-      {TaskList.map((T, index) => {
-        // console.log("bug");
-        return (
-          <Display
-            key={index}
-            index={index}
-            Task={T}
-            setTask={setTask}
-            updateTaskList={updateTaskList}
-            deleteTask={deleteTask}
-            Checkbox={Checkbox}
-            setCheckbox={setCheckbox}
-          />
-        );
-      })}
       <Footer />
     </div>
   );
