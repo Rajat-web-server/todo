@@ -13,3 +13,10 @@
   gap: 10px;
   background-color: rgb(250, 225, 193);
 }
+
+.submit_button>button{
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  margin-left: 10px;
+}
