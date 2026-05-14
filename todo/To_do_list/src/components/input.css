@@ -1,0 +1,9 @@
+.input {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: beige;
+  padding: 8px;
+  color: black;
+  font-size: 1.2em;
+  font-weight: bolder;
+  border-radius: 10px;
+}

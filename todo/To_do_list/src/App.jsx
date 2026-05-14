@@ -49,7 +49,7 @@ useEffect(() => {
  
 
   return (
-    <div>
+    <div className='container'>
       <Input  setTask={setTask} Task={Task}/>
       <button onClick={submit}>Submit</button>
       {TaskList.map((T,index)=>{

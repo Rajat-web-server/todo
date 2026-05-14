@@ -22,7 +22,7 @@ export const Display =({Task, index, updateTaskList, deleteTask, Checkbox, setCh
         setCheckbox(!Checkbox)
     }
     return(
-        <div>
+        <div className="box">
             {
             isUpdate ?(
                 <div>
