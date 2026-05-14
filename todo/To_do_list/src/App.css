@@ -1,5 +1,22 @@
-*{
+* {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: rgb(250, 225, 193);
+}
+
+.submit_button>button{
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  margin-left: 10px;
 }

@@ -1,0 +1,40 @@
+.box {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+.button_container > button {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+}
+.button_container > input {
+  height: 20px;
+  width: 20px;
+}
+.edit_input > input {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: beige;
+  padding: 3px;
+  color: black;
+  font-size: 25px;
+  /* font-weight: bolder; */
+  border-radius: 10px;
+}
+.edit_input > button {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  margin-left: 10px;
+}
