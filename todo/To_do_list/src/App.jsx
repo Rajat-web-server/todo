@@ -13,7 +13,7 @@ function App() {
     const storedTask = localStorage.getItem("taskName");
     return storedTask ? JSON.parse(storedTask) : [];
   });
-  const [Submit_Task, setSubmit_Task] = useState("");
+  const [Submit_Task, setSubmit_Task] = useState(Task);
   const [Checkbox, setCheckbox] = useState(false);
 
   useEffect(() => {
@@ -54,26 +54,33 @@ function App() {
       <div className="main">
         <Input setTask={setTask} Task={Task} />
         <div className="submit_button">
-          <button onClick={submit}>Submit</button>
+          {Task === "" ? (
+            <h2 style={{
+              color:"grey",
+              fontWeight:"bold",
+
+            }}>Write Task</h2>
+          ) : (
+            <button onClick={submit}>Submit</button>
+          )}
         </div>
         <div className="task">
           {TaskList.map((T, index) => {
-          // console.log("bug");
-          return (
-            <Display
-              key={index}
-              index={index}
-              Task={T}
-              setTask={setTask}
-              updateTaskList={updateTaskList}
-              deleteTask={deleteTask}
-              Checkbox={Checkbox}
-              setCheckbox={setCheckbox}
-            />
-          );
-        })}
+            // console.log("bug");
+            return (
+              <Display
+                key={index}
+                index={index}
+                Task={T}
+                setTask={setTask}
+                updateTaskList={updateTaskList}
+                deleteTask={deleteTask}
+                Checkbox={Checkbox}
+                setCheckbox={setCheckbox}
+              />
+            );
+          })}
         </div>
-        
       </div>
 
       <Footer />
