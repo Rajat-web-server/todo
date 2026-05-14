@@ -7,10 +7,18 @@ import './App.css'
 
 function App() {
 
+
   const[Task,setTask]=useState("")
-  const [TaskList, setTaskList]=useState([])
+  const [TaskList, setTaskList]=useState(()=>{
+    const storedTask = localStorage.getItem("taskName");
+    return storedTask ? JSON.parse((storedTask)) : [] ;
+  })
   const[Submit_Task,setSubmit_Task]=useState("")
   const[Checkbox, setCheckbox] =useState(false)
+
+  useEffect(()=>{
+    localStorage.setItem("taskName",JSON.stringify(TaskList))
+  },[TaskList]);
 
   useEffect(() => {
   console.log("Updated Submit Task:", Submit_Task);
@@ -46,7 +54,7 @@ useEffect(() => {
       <button onClick={submit}>Submit</button>
       {TaskList.map((T,index)=>{
         // console.log("bug");
-       return <Display index={index} Task={T} setTask={setTask} updateTaskList={updateTaskList} deleteTask={deleteTask} Checkbox ={Checkbox} setCheckbox ={setCheckbox}  />
+       return <Display key={index} index={index} Task={T} setTask={setTask} updateTaskList={updateTaskList} deleteTask={deleteTask} Checkbox ={Checkbox} setCheckbox ={setCheckbox}  />
       })}
      
     </div>
